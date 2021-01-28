@@ -191,8 +191,21 @@ class Airplane {
           + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
   */
- class ProjectManager {
-     
+ class ProjectManager extends Instructor {
+     constructor(attr){
+       super(attr)
+        this.specialty = attr.specialty
+        this.favLanguage = attr.favLanguage
+        this.catchPhrase = attr.catchPhrase
+        this.gradClassName = attr.gradClassName
+        this.favInstructor = attr.favInstructor
+     }
+     standUp(channel){
+        return `${this.name} announces to ${channel}, @channel standy times!`
+     }
+     debugsCode(studentObj, subject){
+        return `${this.name} debugs ${studentObj.name}'s code on ${subject}`
+     }
  }
   /*
     STRETCH PROBLEM (no tests!)
